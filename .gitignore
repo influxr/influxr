@@ -1,0 +1,17 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+\.idea/
+
+*.Rd
+*.pdf
+*.tar.gz
+
+influxr\.Rcheck/00_pkg_src/influxr/build/
+
+influxr\.Rcheck/
+
+influxr/R/tags
+/.gtm/

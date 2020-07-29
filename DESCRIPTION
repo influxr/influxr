@@ -1,0 +1,41 @@
+Package: influxr
+Version: 0.1.1.9000
+Date: 2020-07-29
+Title: An R interface to influxDB time series databases.
+Authors@R: c(person(
+                   given = "Lukas",
+                   family = "Siebicke",
+                   email = "Lukas.Siebicke@uni-goettingen.de",
+                   role = c("aut", "cre", "cph")),
+              person(
+      		    given = "Anas", 
+      		    family = "Emad", 
+      		    email = "anas.emad@uni-goettingen.de", 
+      		    role = c("aut", "cre", "cph")),
+              person(
+      		    given = "Renke", 
+      		    family = "von Seggern", 
+      		    role = "ctb"))
+Author: Dr. Lukas Siebicke [aut, cre, cph], Anas Emad [aut, cre, cph]
+Maintainer: Anas Emad <anas.emad@uni-goettingen.de>, Dr. Lukas Siebicke <Lukas.Siebicke@uni-goettingen.de>
+Copyright: Anas Emad <anas.emad@uni-goettingen.de>, Dr. Lukas Siebicke <Lukas.Siebicke@uni-goettingen.de> 
+Depends:
+    R (>= 3.0.0)
+Imports:
+    curl,
+    httr,
+    data.table,
+    stats,
+    utils,
+    xts
+SystemRequirements:
+    curl
+Description: influxr reads and writes files and R objects from and to influxDB time series databases, including recursive batch processing of directories of files, with data transfer methods optimized for speed and for handling of huge files through automatic chunking, sanity checks of files, time series, and source-destination consistency checks. In addition to the convenient main input and output functions, influxr further exposes the full influxDB query language to the R environment for full and seamless control.
+License: GPL-3
+URL: https://www.github.com/influxr/influxr
+LazyData: true
+Encoding: UTF-8
+RoxygenNote: 7.1.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
