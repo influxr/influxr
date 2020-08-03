@@ -1,13 +1,13 @@
-#' Selects data points from an influxDB database.
+#' Selects data points from an InfluxDB database.
 #' 
-#' @description \code{influxr_select} returns the result of a query. 
+#' @description `influxr_select` returns the result of a query. 
 #' @details other options that can be passed to the function are \code{ignore_names} and \code{ignore_tags}.
 #' @param client Influx_client object created with \code{\link{influxr_connection}}
 #' @param database character string. Database name.
 #' @param measurement character string. InfluxDb measurement name.
 #' @param fields character vector, \code{NULL} or "*". Fields to be 
-#' selected eg. \code{c('T','Humidity', 'w')}. \code{NULL} or '*' will influxr_select all fields.
-#' @param from POSIX datetime or character in ISO8601 format which will be parsed to date time
+#'      selected eg. \code{c('T','Humidity', 'w')}. \code{NULL} or '*' will select all fields.
+#' @param from `POSIX` datetime or character in ISO8601 format which will be parsed to date time
 #' eg. '2017-12-31 14:00:00' or simply '2017' for the start of 2017. if \code{NULL} all values will be selected.
 #' @param to POSIX datetime or character in ISO8601 format which will be parsed to date time
 #' eg. '2017-12-31 14:00:00' or simply '2017' for the start of 2017. if \code{NULL} all values will be selected.
@@ -25,8 +25,8 @@
 #' @param limit numeric. How many data points should the result be limited to. If \code{NULL} or \code{Inf}
 #' everything will be returned. Default to one million data points.
 #' @param desc logical, not emplemented yet.
-#' @param extra_conditions Pass extra coditions to the query.
-#' @param ... passed to \code{influxr_query}. Example: \code {write_to_file = '~/test.csv'}
+#' @param extra_conditions Pass extra conditions to the query.
+#' @param ... passed to `influxr_query`. e.g. `write_to_file = '~/test.csv'`
 #' @examples
 #'
 #' # Read data from InfluxDB instance and store the result in timed rotating 

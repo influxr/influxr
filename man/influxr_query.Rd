@@ -2,8 +2,7 @@
 % Please edit documentation in R/query.R
 \name{influxr_query}
 \alias{influxr_query}
-\title{Perform a query on InfluxDB instance.
-\code{influxr_query}}
+\title{Perform a query on InfluxDB instance.}
 \usage{
 influxr_query(
   client,
@@ -52,7 +51,6 @@ to the function under an argument named \code{x}. Chunk number will be passed as
 the build in function timed_rotating_file can be used as write handler. default is NULL.}
 }
 \description{
-Perform a query on InfluxDB instance.
 \code{influxr_query}
 }
 \details{

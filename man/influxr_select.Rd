@@ -2,7 +2,7 @@
 % Please edit documentation in R/select.R
 \name{influxr_select}
 \alias{influxr_select}
-\title{Selects data points from an influxDB database.}
+\title{Selects data points from an InfluxDB database.}
 \usage{
 influxr_select(
   client,
@@ -31,9 +31,9 @@ influxr_select(
 \item{measurement}{character string. InfluxDb measurement name.}
 
 \item{fields}{character vector, \code{NULL} or "*". Fields to be 
-selected eg. \code{c('T','Humidity', 'w')}. \code{NULL} or '*' will influxr_select all fields.}
+selected eg. \code{c('T','Humidity', 'w')}. \code{NULL} or '*' will select all fields.}
 
-\item{from}{POSIX datetime or character in ISO8601 format which will be parsed to date time
+\item{from}{`POSIX` datetime or character in ISO8601 format which will be parsed to date time
 eg. '2017-12-31 14:00:00' or simply '2017' for the start of 2017. if \code{NULL} all values will be selected.}
 
 \item{to}{POSIX datetime or character in ISO8601 format which will be parsed to date time
@@ -55,16 +55,16 @@ everything will be returned. Default to one million data points.}
 
 \item{desc}{logical, not emplemented yet.}
 
-\item{extra_conditions}{Pass extra coditions to the query.}
+\item{extra_conditions}{Pass extra conditions to the query.}
 
-\item{...}{passed to \code{influxr_query}. Example: \code {write_to_file = '~/test.csv'}}
+\item{...}{passed to `influxr_query`. e.g. `write_to_file = '~/test.csv'`}
 
 \item{aggreagation}{character string. Aggregation function to be used. Currently supported
 functions are \code{'MEAN','COUNT','DISTINCT', 'INTEGRAL','MEDIAN','MODE', 'SPREAD','STDDEV','SUM', 'FIRST','LAST', 'MIN', 'MAX'}
 if \code{NULL} no aggregation is performed.}
 }
 \description{
-\code{influxr_select} returns the result of a query.
+`influxr_select` returns the result of a query.
 }
 \details{
 other options that can be passed to the function are \code{ignore_names} and \code{ignore_tags}.

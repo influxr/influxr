@@ -1,19 +1,22 @@
 #' Save into timed rotating files
-#' 
+#'
+#' @details Important: date time columns are converted to UTC upon saving.
 #' @param x data.table. Data to be written, first variable should be named time and of type POSIXct
 #' @param path string. Path where files should be saved.
 #' @param base_file_name string. File name to be used as a base.
-#' @param rotation_interval Duration of data to be written on each file eg. '1 day' or '1 hour 30 minutes' 
-#' @param time_suffix_format Time format for file name suffix eg. '%Y%m%d%H%M%S' if left to auto, it will automatically choose formatting.
+#' @param rotation_interval Duration of data to be written on each file eg. `1 day` or `1 hour 30 minutes`
+#' @param time_suffix_format Time format for file name suffix e.g. \code{"\%Y\%m\%d\%H\%M\%S"}
+#'    If left to auto, it will automatically choose formatting. 
 #' @param trunc_start Whether to truncate the start time to the nearest rotation_interval.
 #' @param chunk_number numeric. Number of the chunk.
-#' @param ... passed to fwrite
 #' @param append logical. Whether to append if same file exists on disk
+#' @param ... Passed to fwrite.
+#'
 #' @export
-#' @details Important: date time columns are converted to UTC upon saving.
-#' 
-save_timed_rotating_files <- function(x, path,  base_file_name, rotation_interval = '1 day', time_suffix_format = 'auto',
-                                      trunc_start = TRUE, chunk_number = NULL, drop_time = FALSE, append = TRUE, filter = NULL, ...){
+save_timed_rotating_files <- function(x, path,  base_file_name, rotation_interval = '1 day', 
+                                      time_suffix_format = 'auto',
+                                      trunc_start = TRUE, chunk_number = NULL, 
+                                      drop_time = FALSE, append = TRUE, filter = NULL, ...){
   
   stopifnot(is.data.table(x))
   

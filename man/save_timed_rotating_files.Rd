@@ -2,7 +2,7 @@
 % Please edit documentation in R/timed-rotating-save.R
 \name{save_timed_rotating_files}
 \alias{save_timed_rotating_files}
-\title{Save into timed rotating files.}
+\title{Save into timed rotating files}
 \usage{
 save_timed_rotating_files(
   x,
@@ -25,9 +25,10 @@ save_timed_rotating_files(
 
 \item{base_file_name}{string. File name to be used as a base.}
 
-\item{rotation_interval}{Duration of data to be written on each file eg. '1 day' or '1 hour 30 minutes'}
+\item{rotation_interval}{Duration of data to be written on each file eg. `1 day` or `1 hour 30 minutes`}
 
-\item{time_suffix_format}{Time format for file name suffix eg. '%Y%m%d%H%M%S' if left to auto, it will automatically choose formatting.}
+\item{time_suffix_format}{Time format for file name suffix e.g. \code{"\%Y\%m\%d\%H\%M\%S"}
+If left to auto, it will automatically choose formatting.}
 
 \item{trunc_start}{Whether to truncate the start time to the nearest rotation_interval.}
 
@@ -35,10 +36,10 @@ save_timed_rotating_files(
 
 \item{append}{logical. Whether to append if same file exists on disk}
 
-\item{...}{passed to fwrite}
+\item{...}{Passed to fwrite.}
 }
 \description{
-Save into timed rotating files.
+Save into timed rotating files
 }
 \details{
 Important: date time columns are converted to UTC upon saving.

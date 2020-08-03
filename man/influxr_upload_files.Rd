@@ -16,7 +16,7 @@ influxr_upload_files(
   timestamp_offset = 0,
   tz = ifelse(Sys.getenv("TZ") != "", Sys.getenv("TZ"), Sys.timezone()),
   headerline = NULL,
-  na.strings = c("", "NA", "N/A", "null", "None"),
+  na_strings = c("", "NA", "N/A", "null", "None"),
   skip_lines = 0L,
   nrows = -1L,
   col.classes = NULL,
@@ -66,8 +66,6 @@ For timezones west of Greenwich the offset is positive.}
 
 \item{headerline}{numeric or \code{NULL}. If numeric, it is considered the row number of the header line from which column names will be taken. If \code{NULL}, column names will depend on \code{col.names}.}
 
-\item{na.strings}{ A character vector of strings which are to be interpreted as \code{NA} values. By default, \code{",,"} for columns of all types, including type \code{character} is read as \code{NA} for consistency. \code{,"",} is unambiguous and read as an empty string. To read \code{,NA,} as \code{NA}, set \code{na.strings="NA"}. To read \code{,,} as blank string \code{""}, set \code{na.strings=NULL}. When they occur in the file, the strings in \code{na.strings} should not appear quoted since that is how the string literal \code{,"NA",} is distinguished from \code{,NA,}, for example, when \code{na.strings="NA"}. }
-
 \item{skip_lines}{integer. Rows to skip in each file before reading data.}
 
 \item{nrows}{numeric. Number of rows to read. -1 means all lines. See \code{\link{fread}}.}
@@ -91,7 +89,7 @@ the excution, the file is ignored and a warning is shown at the end.}
 
 \item{...}{Options passed to \code{\link{influxr_fread_recover}}.}
 
-\item{na.string}{character vector. Strings to be replaced with (NA) and hence excluded from uploading to the databases.}
+\item{na_string}{character vector. Strings to be replaced with (NA) and hence excluded from uploading to the databases.}
 
 \item{header}{Passed to fread.}
 
