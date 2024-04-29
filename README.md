@@ -1,5 +1,5 @@
 # influxr  
-An R interface to [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/) time series databases.
+An R interface to [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/) **1.8.x** time series databases.
 
 
 <!-- vim-markdown-toc GFM -->
